@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="lang-fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Clément Helsens</title>
   <meta name="description" content="Contactez Clément Helsens pour un projet de conseil scientifique ou d'analyse de données.">
+  <script>(function(){var l=localStorage.getItem('lang')||'fr';document.documentElement.className='lang-'+l;document.documentElement.lang=l;})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,16 +17,7 @@
     .faq-item h4 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 6px; }
     .faq-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
     .tally-box iframe { border: none; border-radius: var(--radius-sm); width: 100%; min-height: 520px; }
-    .research-intro {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-bottom: 24px;
-      font-size: 0.875rem;
-      color: #1e40af;
-      line-height: 1.6;
-    }
+    .research-intro { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px; font-size: 0.875rem; color: #1e40af; line-height: 1.6; }
     .research-intro strong { font-weight: 600; }
   </style>
 </head>
@@ -38,21 +30,31 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="about.html">À propos</a></li>
+      <li><a href="index.html"><span class="fr">Accueil</span><span class="en">Home</span></a></li>
+      <li><a href="projects.html"><span class="fr">Projets</span><span class="en">Projects</span></a></li>
+      <li><a href="about.html"><span class="fr">À propos</span><span class="en">About</span></a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
+    <button class="lang-btn" onclick="toggleLang()" aria-label="Switch language">
+      <span class="fr">EN</span><span class="en">FR</span>
+    </button>
   </div>
 </nav>
 
 <section class="page-header">
   <div class="container">
     <p class="label" style="color: var(--accent);">Contact</p>
-    <h1>Parlons de votre projet</h1>
-    <p class="lead lead-white">
+    <h1>
+      <span class="fr">Parlons de votre projet</span>
+      <span class="en">Let's talk about your project</span>
+    </h1>
+    <p class="lead lead-white fr">
       Une première consultation est toujours gratuite. Décrivez votre contexte
       et nous trouverons ensemble la meilleure approche.
+    </p>
+    <p class="lead lead-white en">
+      A first consultation is always free. Describe your context
+      and we'll find the best approach together.
     </p>
   </div>
 </section>
@@ -62,11 +64,15 @@
     <div class="contact-layout">
 
       <div class="contact-info">
-        <h3>Me joindre directement</h3>
-        <p>
-          Vous pouvez m'écrire par email ou via LinkedIn. Je réponds généralement
-          sous 24–48h en semaine.
-        </p>
+        <h3>
+          <span class="fr">Me joindre directement</span>
+          <span class="en">Reach me directly</span>
+        </h3>
+        <p class="fr">Vous pouvez m'écrire par email ou via LinkedIn. Je réponds généralement
+        sous 24–48h en semaine.</p>
+        <p class="en">You can reach me by email or via LinkedIn. I typically respond
+        within 24–48h on weekdays.</p>
+
         <a href="mailto:clement.helsens@epfl.ch" class="contact-row">
           <div class="contact-row-icon">📧</div>
           clement.helsens@epfl.ch
@@ -81,92 +87,119 @@
         </a>
         <div class="contact-row" style="cursor:default;">
           <div class="contact-row-icon">📍</div>
-          Suisse romande (EPFL / Lausanne)
+          <span class="fr">Suisse romande (EPFL / Lausanne)</span>
+          <span class="en">French-speaking Switzerland (EPFL / Lausanne)</span>
         </div>
 
         <div style="margin-top: 40px;">
-          <h3 style="margin-bottom: 20px;">Questions fréquentes</h3>
+          <h3 style="margin-bottom: 20px;">FAQ</h3>
+
           <div class="faq-item">
-            <h4>Quels types de missions ?</h4>
-            <p>Conseil en architecture de données, développement de pipelines d'analyse,
+            <h4>
+              <span class="fr">Quels types de missions ?</span>
+              <span class="en">What types of projects?</span>
+            </h4>
+            <p class="fr">Conseil en architecture de données, développement de pipelines d'analyse,
             modèles ML, formation d'équipe, audit de code, expertise ponctuelle. Missions
             courtes (quelques jours) comme longues (plusieurs mois).</p>
+            <p class="en">Data architecture consulting, analysis pipeline development, ML models,
+            team training, code audits, one-off expertise. Short missions (a few days) to
+            long-term engagements (several months).</p>
           </div>
+
           <div class="faq-item">
-            <h4>Remote ou présentiel ?</h4>
-            <p>Les deux. Je suis basé en Suisse romande et peux me déplacer facilement
+            <h4>
+              <span class="fr">Remote ou présentiel ?</span>
+              <span class="en">Remote or on-site?</span>
+            </h4>
+            <p class="fr">Les deux. Je suis basé en Suisse romande et peux me déplacer facilement
             sur les campus EPFL, UNIL, UNIGE et dans la région lémanique.</p>
+            <p class="en">Both. I'm based in French-speaking Switzerland and can easily travel
+            to EPFL, UNIL, UNIGE campuses and the Lake Geneva region.</p>
           </div>
+
           <div class="faq-item">
-            <h4>Quel budget prévoir ?</h4>
-            <p>Variable selon la complexité et la durée. Première consultation gratuite.
+            <h4>
+              <span class="fr">Quel budget prévoir ?</span>
+              <span class="en">What budget to expect?</span>
+            </h4>
+            <p class="fr">Variable selon la complexité et la durée. Première consultation gratuite.
             Je peux également m'adapter aux contraintes budgétaires des labos académiques
             (fonds FNS, ERC, etc.).</p>
+            <p class="en">Varies with complexity and duration. First consultation free.
+            I can also adapt to the budget constraints of academic labs (SNF, ERC funds, etc.).</p>
           </div>
+
           <div class="faq-item">
-            <h4>Délais typiques ?</h4>
-            <p>Généralement disponible sous 2–3 semaines pour démarrer une nouvelle mission.
+            <h4>
+              <span class="fr">Délais typiques ?</span>
+              <span class="en">Typical timelines?</span>
+            </h4>
+            <p class="fr">Généralement disponible sous 2–3 semaines pour démarrer une nouvelle mission.
             Contactez-moi pour discuter de votre planning.</p>
+            <p class="en">Generally available to start a new mission within 2–3 weeks.
+            Contact me to discuss your schedule.</p>
           </div>
         </div>
       </div>
 
       <div>
         <div class="tally-box">
-          <h3>Formulaire d'étude de marché</h3>
-          <p>Pour les laboratoires EPFL · UNIL · UNIGE et HES-SO — aidez-moi à mieux
+          <h3>
+            <span class="fr">Formulaire d'étude de marché</span>
+            <span class="en">Market research form</span>
+          </h3>
+          <p class="fr">Pour les laboratoires EPFL · UNIL · UNIGE et HES-SO — aidez-moi à mieux
           comprendre vos besoins en quelques questions.</p>
+          <p class="en">For EPFL · UNIL · UNIGE and HES-SO labs — help me better understand
+          your needs in a few questions.</p>
 
           <div class="research-intro">
-            <strong>Pourquoi ce formulaire ?</strong> Je réalise actuellement une étude
+            <span class="fr"><strong>Pourquoi ce formulaire ?</strong> Je réalise actuellement une étude
             de marché pour comprendre les besoins réels des laboratoires romands en matière
             d'analyse de données et de conseil technique. Vos réponses m'aident à proposer
-            des services parfaitement adaptés à vos contextes.
+            des services parfaitement adaptés à vos contextes.</span>
+            <span class="en"><strong>Why this form?</strong> I'm currently conducting market research
+            to understand the real data needs of Swiss research labs. Your answers help me
+            offer services perfectly tailored to your contexts.</span>
           </div>
 
           <!--
           ═══════════════════════════════════════════════════════════════
-          INSTRUCTIONS POUR INTÉGRER VOTRE FORMULAIRE TALLY :
-          ───────────────────────────────────────────────────────────────
-          1. Créez un compte sur https://tally.so (gratuit)
-          2. Créez un formulaire avec :
-              - Laboratoire / institution
-              - Type de données (mesures / images / séquences / -omics / autre)
-              - Besoins (stats / ML / visualisation / pipeline complet / autre)
-              - Budget (pas encore / <10k CHF / 10-50k CHF / >50k CHF)
-              - Délai (urgent <1 mois / 1-3 mois / flexible)
-              - Email de contact (optionnel)
-          3. Share → Embed → copiez l'ID du formulaire (ex: wMXkbP)
-          4. Remplacez YOUR_FORM_ID ci-dessous
-          5. Décommentez le bloc iframe et supprimez le bloc tally-placeholder
+          INTÉGRER TALLY :
+          1. Créez un formulaire sur https://tally.so
+          2. Share → Embed → copiez l'ID (ex: wMXkbP)
+          3. Remplacez YOUR_FORM_ID et décommentez le bloc iframe
           ═══════════════════════════════════════════════════════════════
           -->
-
           <div class="tally-placeholder">
-            <strong>Formulaire Tally.so à intégrer ici</strong><br><br>
-            Créez votre formulaire sur <a href="https://tally.so" target="_blank">tally.so</a>,
-            puis remplacez ce bloc par :<br><br>
+            <strong class="fr">Formulaire Tally.so à intégrer ici</strong>
+            <strong class="en">Tally.so form to integrate here</strong><br><br>
+            <span class="fr">Créez votre formulaire sur</span>
+            <span class="en">Create your form on</span>
+            <a href="https://tally.so" target="_blank">tally.so</a>,
+            <span class="fr">puis remplacez ce bloc.</span>
+            <span class="en">then replace this block.</span>
+            <br><br>
             <code>&lt;iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0"&gt;&lt;/iframe&gt;</code>
             <br><br>
             <small style="color: var(--text-muted);">
-              + avant &lt;/body&gt; :<br>
-              <code>&lt;script async src="https://tally.so/widgets/embed.js"&gt;&lt;/script&gt;</code>
+              + <code>&lt;script async src="https://tally.so/widgets/embed.js"&gt;&lt;/script&gt;</code>
             </small>
           </div>
 
           <!--
-          Une fois Tally configuré, décommentez ce bloc (et supprimez tally-placeholder) :
-
           <iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy" width="100%" height="520" frameborder="0"
-            marginheight="0" marginwidth="0" title="Étude de marché labos"></iframe>
+            marginheight="0" marginwidth="0" title="Market research"></iframe>
           <script async src="https://tally.so/widgets/embed.js"></script>
           -->
-
         </div>
+
         <p style="margin-top:16px;font-size:0.8125rem;color:var(--text-muted);text-align:center;">
-          Vous préférez écrire directement ?
-          <a href="mailto:clement.helsens@epfl.ch?subject=Projet%20data%20-%20votre%20labo">
+          <span class="fr">Vous préférez écrire directement ?</span>
+          <span class="en">Prefer to write directly?</span>
+          <a href="mailto:clement.helsens@epfl.ch?subject=Project%20inquiry">
             clement.helsens@epfl.ch
           </a>
         </p>
@@ -178,7 +211,10 @@
 
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Clément Helsens. Basé en Suisse.</p>
+    <p>
+      <span class="fr">© 2026 Clément Helsens. Basé en Suisse.</span>
+      <span class="en">© 2026 Clément Helsens. Based in Switzerland.</span>
+    </p>
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -187,5 +223,14 @@
   </div>
 </footer>
 
+<script>
+function toggleLang() {
+  var html = document.documentElement;
+  var next = html.classList.contains('lang-en') ? 'fr' : 'en';
+  html.className = 'lang-' + next;
+  html.lang = next;
+  localStorage.setItem('lang', next);
+}
+</script>
 </body>
 </html>

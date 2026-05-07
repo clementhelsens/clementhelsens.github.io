@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="lang-fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clément Helsens — Ingénieur Data & Conseil Scientifique</title>
   <meta name="description" content="Physicien et ingénieur logiciel spécialisé en analyse de données pour laboratoires de recherche. Basé en Suisse romande.">
   <meta name="author" content="Clément Helsens">
-  <meta property="og:title" content="Clément Helsens — Ingénieur Data & Conseil Scientifique">
-  <meta property="og:description" content="J'aide les laboratoires de recherche à extraire de la valeur de leurs données — pipelines, ML, conseil.">
+  <meta property="og:title" content="Clément Helsens — Data Engineer & Scientific Consultant">
+  <meta property="og:description" content="Helping research labs turn complex data into results — pipelines, ML, consulting.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://helsens.ch">
+  <!-- Langue sans flash -->
+  <script>(function(){var l=localStorage.getItem('lang')||'fr';document.documentElement.className='lang-'+l;document.documentElement.lang=l;})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +19,6 @@
 </head>
 <body>
 
-<!-- ═══════════════════ NAV ═══════════════════ -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Clément Helsens</a>
@@ -25,143 +26,231 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="about.html">À propos</a></li>
+      <li><a href="index.html" class="active"><span class="fr">Accueil</span><span class="en">Home</span></a></li>
+      <li><a href="projects.html"><span class="fr">Projets</span><span class="en">Projects</span></a></li>
+      <li><a href="about.html"><span class="fr">À propos</span><span class="en">About</span></a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="lang-btn" onclick="toggleLang()" aria-label="Switch language">
+      <span class="fr">EN</span><span class="en">FR</span>
+    </button>
   </div>
 </nav>
 
-<!-- ═══════════════════ HERO ═══════════════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <p class="label hero-label">Conseil & Ingénierie scientifique · Suisse</p>
-    <h1>Transformer vos données<br>en résultats.</h1>
-    <p class="lead lead-white">
+    <p class="label hero-label">
+      <span class="fr">Conseil & Ingénierie scientifique · Suisse</span>
+      <span class="en">Scientific Consulting & Engineering · Switzerland</span>
+    </p>
+    <h1>
+      <span class="fr">Transformer vos données<br>en résultats.</span>
+      <span class="en">Transforming your data<br>into results.</span>
+    </h1>
+    <p class="lead lead-white fr">
       Physicien de formation, ingénieur de métier. J'aide les laboratoires à construire
       des pipelines d'analyse robustes, à déployer des modèles ML et à structurer
       leurs données — pour des résultats reproductibles et maintenables.
     </p>
+    <p class="lead lead-white en">
+      Physics-trained, engineering-minded. I help research labs build robust data
+      pipelines, deploy ML models and structure their data — for reproducible,
+      maintainable results.
+    </p>
     <div class="btn-group">
-      <a href="contact.html" class="btn btn-primary">Discutons de votre projet →</a>
-      <a href="projects.html" class="btn btn-outline-dark">Voir les réalisations</a>
+      <a href="contact.html" class="btn btn-primary">
+        <span class="fr">Discutons de votre projet →</span>
+        <span class="en">Let's talk about your project →</span>
+      </a>
+      <a href="projects.html" class="btn btn-outline-dark">
+        <span class="fr">Voir les réalisations</span>
+        <span class="en">See our work</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ EXPERTISE ═══════════════════ -->
+<!-- EXPERTISE -->
 <section>
   <div class="container">
     <p class="label">Expertise</p>
-    <h2>Ce que j'apporte à votre labo</h2>
-    <p class="lead">
+    <h2>
+      <span class="fr">Ce que j'apporte à votre labo</span>
+      <span class="en">What I bring to your lab</span>
+    </h2>
+    <p class="lead fr">
       Plus de 15 ans à travailler sur des données complexes dans des environnements
       de recherche à haute exigence — du CERN aux start-ups suisses.
+    </p>
+    <p class="lead en">
+      Over 15 years working with complex data in high-stakes research environments —
+      from CERN to Swiss start-ups.
     </p>
     <div class="expertise-grid">
       <div class="expertise-item">
         <div class="expertise-icon">📊</div>
-        <h3>Analyse de données & ML</h3>
-        <p>Python, scikit-learn, PyTorch, ROOT. Des analyses exploratoires aux modèles
+        <h3>
+          <span class="fr">Analyse de données & ML</span>
+          <span class="en">Data Analysis & ML</span>
+        </h3>
+        <p class="fr">Python, scikit-learn, PyTorch, ROOT. Des analyses exploratoires aux modèles
         en production, en passant par la visualisation et l'interprétation des résultats.</p>
+        <p class="en">Python, scikit-learn, PyTorch, ROOT. From exploratory analysis to production
+        models, including visualisation and results interpretation.</p>
       </div>
       <div class="expertise-item">
         <div class="expertise-icon">⚙️</div>
-        <h3>Développement logiciel</h3>
-        <p>C++17, Python, bonnes pratiques de génie logiciel. Du prototype rapide au
+        <h3>
+          <span class="fr">Développement logiciel</span>
+          <span class="en">Software Development</span>
+        </h3>
+        <p class="fr">C++17, Python, bonnes pratiques de génie logiciel. Du prototype rapide au
         code propre, documenté et maintenable à long terme.</p>
+        <p class="en">C++17, Python, software engineering best practices. From rapid prototype to
+        clean, documented, long-term maintainable code.</p>
       </div>
       <div class="expertise-item">
         <div class="expertise-icon">🔁</div>
-        <h3>Pipelines reproductibles</h3>
-        <p>Docker, CI/CD, gestion de workflows HPC (HTCondor, Slurm). Des analyses
+        <h3>
+          <span class="fr">Pipelines reproductibles</span>
+          <span class="en">Reproducible Pipelines</span>
+        </h3>
+        <p class="fr">Docker, CI/CD, gestion de workflows HPC (HTCondor, Slurm). Des analyses
         traçables, versionnées et déployables sur tout cluster.</p>
+        <p class="en">Docker, CI/CD, HPC workflow management (HTCondor, Slurm). Traceable,
+        versioned analyses deployable on any cluster.</p>
       </div>
       <div class="expertise-item">
         <div class="expertise-icon">🎓</div>
-        <h3>Conseil & Formation</h3>
-        <p>Audit de code, design d'architecture de données, formation d'équipe. Je
+        <h3>
+          <span class="fr">Conseil & Formation</span>
+          <span class="en">Consulting & Training</span>
+        </h3>
+        <p class="fr">Audit de code, design d'architecture de données, formation d'équipe. Je
         m'adapte à votre niveau et à vos contraintes institutionnelles.</p>
+        <p class="en">Code audits, data architecture design, team training. I adapt to your
+        level and your institutional constraints.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ PROJETS VEDETTES ═══════════════════ -->
+<!-- PROJETS -->
 <section class="section-alt">
   <div class="container">
-    <p class="label">Projets récents</p>
-    <h2>Quelques réalisations</h2>
-    <p class="lead">
+    <p class="label">
+      <span class="fr">Projets récents</span>
+      <span class="en">Recent work</span>
+    </p>
+    <h2>
+      <span class="fr">Quelques réalisations</span>
+      <span class="en">Selected projects</span>
+    </h2>
+    <p class="lead fr">
       Des projets allant de la physique des hautes énergies à la bio-informatique
       et à l'analyse de performance sportive.
+    </p>
+    <p class="lead en">
+      Projects ranging from high-energy physics to bioinformatics
+      and sports performance analytics.
     </p>
     <div class="cards-grid">
       <div class="card">
         <div class="card-emoji">⚛️</div>
         <h3>Key4HEP</h3>
-        <p>Ecosystème logiciel commun pour les futurs détecteurs en physique des hautes
+        <p class="fr">Ecosystème logiciel commun pour les futurs détecteurs en physique des hautes
         énergies (CERN / FCC). Développement de frameworks d'analyse et de simulation
         utilisés par des dizaines de groupes internationaux.</p>
+        <p class="en">Common software ecosystem for future high-energy physics detectors
+        (CERN / FCC). Development of analysis and simulation frameworks used by dozens
+        of international groups.</p>
         <div class="tags">
           <span class="tag tag-accent">C++</span>
           <span class="tag tag-accent">Python</span>
           <span class="tag">CERN</span>
           <span class="tag">Open Source</span>
         </div>
-        <a href="projects.html#key4hep" class="card-link">En savoir plus →</a>
+        <a href="projects.html#key4hep" class="card-link">
+          <span class="fr">En savoir plus →</span>
+          <span class="en">Learn more →</span>
+        </a>
       </div>
       <div class="card">
         <div class="card-emoji">💊</div>
         <h3>Drug Screen</h3>
-        <p>Plateforme d'analyse pour le criblage pharmacologique haut débit. Automatisation
-        des pipelines de traitement, scoring ML et tableaux de bord interactifs pour
-        les chercheurs.</p>
+        <p class="fr">Plateforme d'analyse pour le criblage pharmacologique haut débit.
+        Automatisation des pipelines de traitement, scoring ML et tableaux de bord
+        interactifs pour les chercheurs.</p>
+        <p class="en">Analysis platform for high-throughput pharmacological screening.
+        Pipeline automation, ML scoring and interactive dashboards for researchers.</p>
         <div class="tags">
           <span class="tag tag-accent">Python</span>
           <span class="tag tag-accent">ML</span>
           <span class="tag">Bio-informatique</span>
         </div>
-        <a href="projects.html#drugscreen" class="card-link">En savoir plus →</a>
+        <a href="projects.html#drugscreen" class="card-link">
+          <span class="fr">En savoir plus →</span>
+          <span class="en">Learn more →</span>
+        </a>
       </div>
       <div class="card">
         <div class="card-emoji">🏃</div>
         <h3>Sports Platform</h3>
-        <p>Plateforme de données pour l'analyse de performance sportive. Collecte,
-        traitement temps réel et visualisation de métriques physiologiques et
-        biomécaniques.</p>
+        <p class="fr">Plateforme de données pour l'analyse de performance sportive. Collecte,
+        traitement temps réel et visualisation de métriques physiologiques et biomécaniques.</p>
+        <p class="en">Data platform for sports performance analytics. Real-time collection,
+        processing and visualisation of physiological and biomechanical metrics.</p>
         <div class="tags">
           <span class="tag tag-accent">Data</span>
           <span class="tag tag-accent">Python</span>
           <span class="tag">Analytics</span>
         </div>
-        <a href="projects.html#sports" class="card-link">En savoir plus →</a>
+        <a href="projects.html#sports" class="card-link">
+          <span class="fr">En savoir plus →</span>
+          <span class="en">Learn more →</span>
+        </a>
       </div>
     </div>
     <div style="margin-top: 36px;">
-      <a href="projects.html" class="btn btn-primary">Voir tous les projets →</a>
+      <a href="projects.html" class="btn btn-primary">
+        <span class="fr">Voir tous les projets →</span>
+        <span class="en">View all projects →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ CTA ═══════════════════ -->
+<!-- CTA -->
 <section>
   <div class="container">
     <div class="cta-strip">
-      <p class="label">Vous avez un projet ?</p>
-      <h2>Parlez-moi de vos données</h2>
-      <p>Que vous ayez besoin d'un audit, d'un pipeline d'analyse ou d'un outil sur
+      <p class="label">
+        <span class="fr">Vous avez un projet ?</span>
+        <span class="en">Got a project?</span>
+      </p>
+      <h2>
+        <span class="fr">Parlez-moi de vos données</span>
+        <span class="en">Tell me about your data</span>
+      </h2>
+      <p class="fr">Que vous ayez besoin d'un audit, d'un pipeline d'analyse ou d'un outil sur
       mesure — une première consultation est toujours gratuite.</p>
-      <a href="contact.html" class="btn btn-primary">Prendre contact →</a>
+      <p class="en">Whether you need an audit, an analysis pipeline or a custom tool —
+      a first consultation is always free.</p>
+      <a href="contact.html" class="btn btn-primary">
+        <span class="fr">Prendre contact →</span>
+        <span class="en">Get in touch →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Clément Helsens. Basé en Suisse.</p>
+    <p>
+      <span class="fr">© 2026 Clément Helsens. Basé en Suisse.</span>
+      <span class="en">© 2026 Clément Helsens. Based in Switzerland.</span>
+    </p>
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -170,5 +259,14 @@
   </div>
 </footer>
 
+<script>
+function toggleLang() {
+  var html = document.documentElement;
+  var next = html.classList.contains('lang-en') ? 'fr' : 'en';
+  html.className = 'lang-' + next;
+  html.lang = next;
+  localStorage.setItem('lang', next);
+}
+</script>
 </body>
 </html>
