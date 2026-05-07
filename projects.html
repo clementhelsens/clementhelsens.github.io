@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — Clément Helsens</title>
+  <meta name="description" content="Réalisations de Clément Helsens : Key4HEP, LiLiTTool, Drug Screen, Sports Platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      margin-bottom: 24px;
+      transition: box-shadow var(--transition);
+    }
+    .project-card:hover { box-shadow: var(--shadow-hover); }
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .project-emoji { font-size: 2.25rem; line-height: 1; flex-shrink: 0; }
+    .project-meta { flex: 1; }
+    .project-meta h2 { font-size: 1.375rem; margin-bottom: 4px; letter-spacing: -0.02em; }
+    .project-meta .project-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    .project-body {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .project-highlights {
+      list-style: none;
+      margin: 0 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .project-highlights li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .project-highlights li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .status-open   { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .status-collab { background: #eff6ff; color: var(--accent); border: 1px solid #bfdbfe; }
+    .status-complete { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+    .project-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Clément Helsens</a>
+    <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html" class="active">Projets</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="container">
+    <p class="label" style="color: var(--accent);">Réalisations</p>
+    <h1>Projets & contributions</h1>
+    <p class="lead lead-white">
+      Un aperçu de mes principaux projets — de la physique fondamentale à l'analyse
+      de données appliquée, en passant par le logiciel scientifique open-source.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <!-- Key4HEP -->
+    <div class="project-card" id="key4hep">
+      <div class="project-header">
+        <div class="project-emoji">⚛️</div>
+        <div class="project-meta">
+          <h2>Key4HEP</h2>
+          <p class="project-subtitle">Ecosystème logiciel pour la physique des hautes énergies — CERN / FCC</p>
+        </div>
+      </div>
+      <p class="project-body">
+        Key4HEP est un effort communautaire international visant à fournir un cadre logiciel
+        unifié pour les futurs détecteurs de physique des hautes énergies, notamment dans le
+        cadre du projet FCC (Future Circular Collider) au CERN. J'ai contribué au développement
+        du framework d'analyse <strong>FCCAnalyses</strong>, qui permet aux physiciens de réaliser
+        des analyses end-to-end — de la simulation de particules aux résultats publiables.
+      </p>
+      <ul class="project-highlights">
+        <li>Développement et maintenance de FCCAnalyses (Python + C++), utilisé par ~50 groupes de physique</li>
+        <li>Architecture de pipelines de traitement d'événements sur des jeux de données à l'échelle du pétaoctet</li>
+        <li>Intégration CI/CD, tests automatisés et documentation complète</li>
+        <li>Encadrement de doctorants et post-docs sur les workflows d'analyse</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">C++17</span>
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">ROOT</span>
+        <span class="tag">PODIO</span>
+        <span class="tag">EDM4hep</span>
+        <span class="tag">CERN</span>
+        <span class="tag">Open Source</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-open">● Actif</span>
+        <div class="project-links">
+          <a href="https://github.com/HEP-FCC/FCCAnalyses" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          <a href="https://key4hep.github.io" target="_blank" rel="noopener" class="btn btn-outline">Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LiLiTTool -->
+    <div class="project-card" id="lilitool">
+      <div class="project-header">
+        <div class="project-emoji">📈</div>
+        <div class="project-meta">
+          <h2>LiLiTTool</h2>
+          <p class="project-subtitle">Outil d'analyse statistique — likelihood & tests d'hypothèses</p>
+        </div>
+      </div>
+      <p class="project-body">
+        LiLiTTool est un outil Python spécialisé dans les analyses statistiques de type
+        profil de vraisemblance (profile likelihood) et les tests d'hypothèses fréquentistes,
+        typiques en physique des hautes énergies. Il propose une interface simplifiée pour
+        construire des modèles statistiques, calculer des intervalles de confiance et
+        visualiser les résultats.
+      </p>
+      <ul class="project-highlights">
+        <li>Interface Python haut niveau sur ROOT/RooStats pour les non-experts en statistique</li>
+        <li>Calcul de limites d'exclusion et d'intervalles de confiance (CL<sub>s</sub>, Feldman-Cousins)</li>
+        <li>Visualisation automatique des scans de vraisemblance et des intervalles</li>
+        <li>Utilisé dans plusieurs publications HEP (ATLAS, FCC)</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">ROOT</span>
+        <span class="tag tag-accent">RooStats</span>
+        <span class="tag">Statistiques</span>
+        <span class="tag">HEP</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-collab">● Open source</span>
+        <div class="project-links">
+          <a href="https://github.com/clementhelsens" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drug Screen -->
+    <div class="project-card" id="drugscreen">
+      <div class="project-header">
+        <div class="project-emoji">💊</div>
+        <div class="project-meta">
+          <h2>Drug Screen</h2>
+          <p class="project-subtitle">Plateforme d'analyse pour le criblage pharmacologique haut débit</p>
+        </div>
+      </div>
+      <p class="project-body">
+        En collaboration avec un laboratoire de bio-informatique, développement d'une
+        plateforme complète pour l'analyse de données de criblage pharmacologique (HTS —
+        High-Throughput Screening). Le système automatise l'ingestion, le contrôle qualité,
+        la normalisation et le scoring des données de criblage, et fournit un tableau de
+        bord interactif pour les biologistes et les chimistes.
+      </p>
+      <ul class="project-highlights">
+        <li>Pipeline de traitement automatisé des données HTS (ingestion, QC, normalisation)</li>
+        <li>Modèles ML pour le classement de composés actifs et la réduction des faux positifs</li>
+        <li>Dashboard interactif (Python / Dash) pour l'exploration et l'export des résultats</li>
+        <li>Intégration avec des bases de données de composés chimiques (ChEMBL, PubChem)</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">Pandas</span>
+        <span class="tag tag-accent">scikit-learn</span>
+        <span class="tag tag-accent">Dash/Plotly</span>
+        <span class="tag">Bio-informatique</span>
+        <span class="tag">HTS</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-complete">Projet livré</span>
+        <div class="project-links">
+          <a href="contact.html" class="btn btn-outline">Me contacter pour en savoir plus</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sports Platform -->
+    <div class="project-card" id="sports">
+      <div class="project-header">
+        <div class="project-emoji">🏃</div>
+        <div class="project-meta">
+          <h2>Sports Platform</h2>
+          <p class="project-subtitle">Plateforme de données pour l'analyse de performance sportive</p>
+        </div>
+      </div>
+      <p class="project-body">
+        Conception et développement d'une plateforme de collecte et d'analyse de données de
+        performance pour athlètes de haut niveau. Le système agrège des données de capteurs
+        physiologiques (fréquence cardiaque, GPS, accéléromètres), les traite en quasi-temps
+        réel et produit des indicateurs actionnables pour les entraîneurs.
+      </p>
+      <ul class="project-highlights">
+        <li>Architecture de collecte de données multi-sources (IoT, wearables, GPS)</li>
+        <li>Traitement en quasi-temps réel et détection d'anomalies physiologiques</li>
+        <li>Tableau de bord web pour visualisation et comparaison de sessions d'entraînement</li>
+        <li>Export de rapports PDF personnalisés pour les entraîneurs</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">FastAPI</span>
+        <span class="tag tag-accent">PostgreSQL</span>
+        <span class="tag">IoT</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Sport</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-collab">● En cours</span>
+        <div class="project-links">
+          <a href="contact.html" class="btn btn-outline">Me contacter</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="cta-strip">
+      <p class="label">Votre projet</p>
+      <h2>Un défi similaire dans votre labo ?</h2>
+      <p>Chaque problème est unique. Discutons ensemble de ce que je peux apporter
+      à votre contexte spécifique.</p>
+      <a href="contact.html" class="btn btn-primary">Prendre contact →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Clément Helsens. Basé en Suisse.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:clement.helsens@epfl.ch">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

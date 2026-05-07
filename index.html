@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clément Helsens — Ingénieur Data & Conseil Scientifique</title>
+  <meta name="description" content="Physicien et ingénieur logiciel spécialisé en analyse de données pour laboratoires de recherche. Basé en Suisse romande.">
+  <meta name="author" content="Clément Helsens">
+  <meta property="og:title" content="Clément Helsens — Ingénieur Data & Conseil Scientifique">
+  <meta property="og:description" content="J'aide les laboratoires de recherche à extraire de la valeur de leurs données — pipelines, ML, conseil.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://helsens.ch">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Clément Helsens</a>
+    <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="container">
+    <p class="label hero-label">Conseil & Ingénierie scientifique · Suisse</p>
+    <h1>Transformer vos données<br>en résultats.</h1>
+    <p class="lead lead-white">
+      Physicien de formation, ingénieur de métier. J'aide les laboratoires à construire
+      des pipelines d'analyse robustes, à déployer des modèles ML et à structurer
+      leurs données — pour des résultats reproductibles et maintenables.
+    </p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-primary">Discutons de votre projet →</a>
+      <a href="projects.html" class="btn btn-outline-dark">Voir les réalisations</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ EXPERTISE ═══════════════════ -->
+<section>
+  <div class="container">
+    <p class="label">Expertise</p>
+    <h2>Ce que j'apporte à votre labo</h2>
+    <p class="lead">
+      Plus de 15 ans à travailler sur des données complexes dans des environnements
+      de recherche à haute exigence — du CERN aux start-ups suisses.
+    </p>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <div class="expertise-icon">📊</div>
+        <h3>Analyse de données & ML</h3>
+        <p>Python, scikit-learn, PyTorch, ROOT. Des analyses exploratoires aux modèles
+        en production, en passant par la visualisation et l'interprétation des résultats.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">⚙️</div>
+        <h3>Développement logiciel</h3>
+        <p>C++17, Python, bonnes pratiques de génie logiciel. Du prototype rapide au
+        code propre, documenté et maintenable à long terme.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">🔁</div>
+        <h3>Pipelines reproductibles</h3>
+        <p>Docker, CI/CD, gestion de workflows HPC (HTCondor, Slurm). Des analyses
+        traçables, versionnées et déployables sur tout cluster.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">🎓</div>
+        <h3>Conseil & Formation</h3>
+        <p>Audit de code, design d'architecture de données, formation d'équipe. Je
+        m'adapte à votre niveau et à vos contraintes institutionnelles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROJETS VEDETTES ═══════════════════ -->
+<section class="section-alt">
+  <div class="container">
+    <p class="label">Projets récents</p>
+    <h2>Quelques réalisations</h2>
+    <p class="lead">
+      Des projets allant de la physique des hautes énergies à la bio-informatique
+      et à l'analyse de performance sportive.
+    </p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-emoji">⚛️</div>
+        <h3>Key4HEP</h3>
+        <p>Ecosystème logiciel commun pour les futurs détecteurs en physique des hautes
+        énergies (CERN / FCC). Développement de frameworks d'analyse et de simulation
+        utilisés par des dizaines de groupes internationaux.</p>
+        <div class="tags">
+          <span class="tag tag-accent">C++</span>
+          <span class="tag tag-accent">Python</span>
+          <span class="tag">CERN</span>
+          <span class="tag">Open Source</span>
+        </div>
+        <a href="projects.html#key4hep" class="card-link">En savoir plus →</a>
+      </div>
+      <div class="card">
+        <div class="card-emoji">💊</div>
+        <h3>Drug Screen</h3>
+        <p>Plateforme d'analyse pour le criblage pharmacologique haut débit. Automatisation
+        des pipelines de traitement, scoring ML et tableaux de bord interactifs pour
+        les chercheurs.</p>
+        <div class="tags">
+          <span class="tag tag-accent">Python</span>
+          <span class="tag tag-accent">ML</span>
+          <span class="tag">Bio-informatique</span>
+        </div>
+        <a href="projects.html#drugscreen" class="card-link">En savoir plus →</a>
+      </div>
+      <div class="card">
+        <div class="card-emoji">🏃</div>
+        <h3>Sports Platform</h3>
+        <p>Plateforme de données pour l'analyse de performance sportive. Collecte,
+        traitement temps réel et visualisation de métriques physiologiques et
+        biomécaniques.</p>
+        <div class="tags">
+          <span class="tag tag-accent">Data</span>
+          <span class="tag tag-accent">Python</span>
+          <span class="tag">Analytics</span>
+        </div>
+        <a href="projects.html#sports" class="card-link">En savoir plus →</a>
+      </div>
+    </div>
+    <div style="margin-top: 36px;">
+      <a href="projects.html" class="btn btn-primary">Voir tous les projets →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<section>
+  <div class="container">
+    <div class="cta-strip">
+      <p class="label">Vous avez un projet ?</p>
+      <h2>Parlez-moi de vos données</h2>
+      <p>Que vous ayez besoin d'un audit, d'un pipeline d'analyse ou d'un outil sur
+      mesure — une première consultation est toujours gratuite.</p>
+      <a href="contact.html" class="btn btn-primary">Prendre contact →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Clément Helsens. Basé en Suisse.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:clement.helsens@epfl.ch">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

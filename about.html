@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Clément Helsens</title>
+  <meta name="description" content="Parcours et expertise de Clément Helsens, physicien et ingénieur data basé en Suisse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
+    .sidebar-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .sidebar-card h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .sidebar-card ul { list-style: none; }
+    .sidebar-card li {
+      font-size: 0.875rem;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .sidebar-card li:last-child { border-bottom: none; }
+    .highlight-number {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .highlight-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item { text-align: center; }
+    @media (max-width: 480px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Clément Helsens</a>
+    <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="about.html" class="active">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="container">
+    <p class="label" style="color: var(--accent);">À propos</p>
+    <h1>Clément Helsens</h1>
+    <p class="lead lead-white">
+      Physicien des particules reconverti en ingénieur data et consultant scientifique.
+      Basé en Suisse romande, je travaille à l'intersection de la recherche fondamentale,
+      du logiciel et de l'analyse de données.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="two-col">
+
+      <div>
+        <div class="about-header">
+          <div class="avatar">CH</div>
+          <div class="about-meta">
+            <h2>Clément Helsens</h2>
+            <p class="role">Physicien · Ingénieur logiciel · Consultant data</p>
+            <p class="bio">
+              Formé en physique des particules, j'ai passé plus de 15 ans à concevoir des
+              outils d'analyse de données pour les plus grands détecteurs du monde (ATLAS au
+              LHC, FCC au CERN). Aujourd'hui, j'applique cette expertise aux problèmes de
+              données des laboratoires académiques et industriels suisses.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="highlight-number">15+</div>
+            <div class="highlight-label">ans en recherche</div>
+          </div>
+          <div class="stat-item">
+            <div class="highlight-number">50+</div>
+            <div class="highlight-label">publications</div>
+          </div>
+          <div class="stat-item">
+            <div class="highlight-number">4</div>
+            <div class="highlight-label">projets actifs</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 56px;">
+          <p class="label">Expérience</p>
+          <h2>Parcours professionnel</h2>
+          <div class="timeline mt-8">
+            <div class="timeline-item">
+              <div class="timeline-date">2023 – présent</div>
+              <div class="timeline-content">
+                <h3>Consultant indépendant</h3>
+                <p class="org">Helsens Consulting · Suisse</p>
+                <p>Conseil et développement logiciel pour laboratoires académiques et acteurs
+                industriels : pipelines de données, modèles ML, formation.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2018 – 2023</div>
+              <div class="timeline-content">
+                <h3>Chercheur senior — FCC Software</h3>
+                <p class="org">CERN · Genève</p>
+                <p>Responsable du framework d'analyse FCCAnalyses pour le projet Future Circular
+                Collider. Développement de logiciels de simulation et d'analyse, coordination
+                de groupes de travail internationaux.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2013 – 2018</div>
+              <div class="timeline-content">
+                <h3>Chercheur — Collaboration ATLAS</h3>
+                <p class="org">CERN / EPFL · Genève — Lausanne</p>
+                <p>Analyses de physique au Grand Collisionneur de Hadrons (LHC) : recherches
+                de nouvelle physique, mesures de précision du boson de Higgs. Développement
+                d'outils d'analyse et de reconstruction de jets.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2010 – 2013</div>
+              <div class="timeline-content">
+                <h3>Doctorat en physique des particules</h3>
+                <p class="org">Université Paris-Saclay · France</p>
+                <p>Thèse sur [TITRE DE THÈSE À COMPLÉTER]. Analyse de données de
+                collisions proton-proton à l'expérience ATLAS du LHC.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 56px;">
+          <p class="label">Formation</p>
+          <h2>Parcours académique</h2>
+          <div class="timeline mt-8">
+            <div class="timeline-item">
+              <div class="timeline-date">2010 – 2013</div>
+              <div class="timeline-content">
+                <h3>Doctorat (PhD) en physique des particules</h3>
+                <p class="org">Université Paris-Saclay</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2008 – 2010</div>
+              <div class="timeline-content">
+                <h3>Master en physique théorique & expérimentale</h3>
+                <p class="org">[Université à compléter]</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2005 – 2008</div>
+              <div class="timeline-content">
+                <h3>Licence en physique</h3>
+                <p class="org">[Université à compléter]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-section">
+          <p class="label">Compétences</p>
+          <h2>Outils & technologies</h2>
+          <div class="skills-grid">
+            <div class="skill-col">
+              <h4>Langages</h4>
+              <ul>
+                <li>Python</li>
+                <li>C++ (11/14/17)</li>
+                <li>Bash / Shell</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>ML & Data</h4>
+              <ul>
+                <li>scikit-learn</li>
+                <li>PyTorch</li>
+                <li>Pandas / NumPy</li>
+                <li>ROOT / RooStats</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>Infrastructure</h4>
+              <ul>
+                <li>Docker</li>
+                <li>Git / GitHub Actions</li>
+                <li>HTCondor / Slurm</li>
+                <li>Linux</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>Visualisation</h4>
+              <ul>
+                <li>Matplotlib / Seaborn</li>
+                <li>Plotly / Dash</li>
+                <li>ROOT</li>
+                <li>Jupyter</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 48px;">
+          <p class="label">Langues</p>
+          <h2>Communication</h2>
+          <div class="timeline mt-8" style="max-width: 440px;">
+            <div class="timeline-item">
+              <div class="timeline-date">Français</div>
+              <div class="timeline-content"><h3>Langue maternelle</h3></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Anglais</div>
+              <div class="timeline-content">
+                <h3>Courant — C1/C2</h3>
+                <p>Langue de travail principale pendant 15 ans dans des environnements internationaux.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div>
+        <div class="sidebar-card">
+          <h4>Contact rapide</h4>
+          <ul>
+            <li>📧 <a href="mailto:clement.helsens@epfl.ch" style="color:var(--accent);text-decoration:none;">clement.helsens@epfl.ch</a></li>
+            <li>🐙 <a href="https://github.com/clementhelsens" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">github.com/clementhelsens</a></li>
+            <li>💼 <a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">LinkedIn</a></li>
+            <li>📍 Suisse romande</li>
+          </ul>
+        </div>
+        <div class="sidebar-card" style="margin-top:16px;">
+          <h4>Disponibilité</h4>
+          <ul>
+            <li>✅ Missions de conseil (court/long terme)</li>
+            <li>✅ Développement logiciel</li>
+            <li>✅ Formation & ateliers</li>
+            <li>✅ Remote & présentiel</li>
+          </ul>
+        </div>
+        <div class="sidebar-card" style="margin-top:16px;">
+          <h4>Secteurs</h4>
+          <ul>
+            <li>Physique fondamentale</li>
+            <li>Bio-informatique</li>
+            <li>Sciences du sport</li>
+            <li>Recherche appliquée</li>
+            <li>Industrie pharmaceutique</li>
+          </ul>
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;display:flex;">
+            Me contacter →
+          </a>
+        </div>
+        <!-- Remplacer href="#" par le lien vers votre CV PDF -->
+        <div style="margin-top: 10px;">
+          <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;display:flex;">
+            Télécharger le CV (PDF)
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Clément Helsens. Basé en Suisse.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:clement.helsens@epfl.ch">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
