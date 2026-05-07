@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets — Clément Helsens</title>
-  <meta name="description" content="Réalisations de Clément Helsens : Key4HEP, LiLiTTool, Drug Screen, Sports Platform.">
+  <meta name="description" content="Réalisations de Clément Helsens : LiLiTTool, Drug Screen, Viventis, Sports Platform, Key4HEP.">
   <script>(function(){var l=localStorage.getItem('lang')||'fr';document.documentElement.className='lang-'+l;document.documentElement.lang=l;})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,44 @@
     .status-collab { background: #eff6ff; color: var(--accent); border: 1px solid #bfdbfe; }
     .status-complete { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
     .project-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    /* Video / GIF embed */
+    .project-media {
+      margin: 20px 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+    }
+    .project-media video,
+    .project-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+    }
+    .project-media-caption {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 8px 12px;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      font-style: italic;
+    }
+    .period-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 2px 10px;
+      margin-left: 8px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -67,12 +105,12 @@
       <span class="en">Projects & contributions</span>
     </h1>
     <p class="lead lead-white fr">
-      Un aperçu de mes principaux projets — de la physique fondamentale à l'analyse
-      de données appliquée, en passant par le logiciel scientifique open-source.
+      De la microscopie intelligente à la physique des hautes énergies, en passant
+      par la bio-informatique et l'analyse de performance sportive.
     </p>
     <p class="lead lead-white en">
-      An overview of my main projects — from fundamental physics to applied data
-      analysis and open-source scientific software.
+      From smart microscopy to high-energy physics, bioinformatics
+      and sports performance analytics.
     </p>
   </div>
 </section>
@@ -80,41 +118,277 @@
 <section>
   <div class="container">
 
+    <!-- LiLiTTool / Smart Microscopy -->
+    <div class="project-card" id="lilitool">
+      <div class="project-header">
+        <div class="project-emoji">🔬</div>
+        <div class="project-meta">
+          <h2>LiLiTTool <span class="period-badge">EPFL · 2023–présent</span></h2>
+          <p class="project-subtitle fr">Tracking temps réel multi-positions sur microscopie lightsheet — EPFL</p>
+          <p class="project-subtitle en">Real-time multi-position tracking on light-sheet microscopy — EPFL</p>
+        </div>
+      </div>
+      <p class="project-body fr">
+        LiLiTTool est un outil de tracking biologique temps réel développé à l'EPFL pour la
+        microscopie à feuille de lumière (lightsheet). Basé sur <strong>CoTracker3</strong>
+        (deep learning), il permet de suivre simultanément plusieurs régions d'intérêt dans des
+        échantillons vivants en croissance — avec une latence inférieure à 1 seconde. En production
+        depuis plus de 12 mois sur des microscopes Viventis, il s'étend maintenant à Zeiss ZEN.
+        Une pré-publication est disponible (2026, 1<sup>er</sup> auteur).
+      </p>
+      <p class="project-body en">
+        LiLiTTool is a real-time biological tracking tool developed at EPFL for light-sheet
+        microscopy. Based on <strong>CoTracker3</strong> (deep learning), it tracks multiple
+        regions of interest simultaneously in live growing samples — with sub-second latency.
+        In production for over 12 months on Viventis microscopes, now extending to Zeiss ZEN.
+        A pre-print is available (2026, 1st author).
+      </p>
+
+      <!-- Video player with GIF fallback -->
+      <div class="project-media">
+        <video autoplay loop muted playsinline poster="">
+          <source src="movie3_tracking-fusion.mp4" type="video/mp4">
+          <img src="movie3_tracking-fusion.gif" alt="LiLiTTool — zebrafish tail tracking over 30h">
+        </video>
+        <div class="project-media-caption">
+          <span class="fr">Tracking de la queue d'un poisson zèbre sur 30h — la structure n'existait pas
+          au début de l'acquisition. Résolution sub-pixel, temps réel.</span>
+          <span class="en">Zebrafish tail tracking over 30h — the structure did not exist at the start
+          of acquisition. Sub-pixel resolution, real-time.</span>
+        </div>
+      </div>
+
+      <ul class="project-highlights fr">
+        <li>Tracking multi-ROI temps réel avec CoTracker3 (&lt;1 s de latence), 12+ mois en production continue</li>
+        <li>Suivi de structures biologiques apparaissant en cours d'acquisition (ex: queue du poisson zèbre)</li>
+        <li>Intégration native avec Viventis lightsheet et Zeiss ZEN</li>
+        <li>Code open-source, pré-publication soumise (doi:10.64898/2026.04.03.715281)</li>
+      </ul>
+      <ul class="project-highlights en">
+        <li>Real-time multi-ROI tracking with CoTracker3 (&lt;1 s latency), 12+ months continuous production use</li>
+        <li>Tracks biological structures appearing during acquisition (e.g. zebrafish tail)</li>
+        <li>Native integration with Viventis lightsheet and Zeiss ZEN</li>
+        <li>Open-source code, pre-print submitted (doi:10.64898/2026.04.03.715281)</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">CoTracker3</span>
+        <span class="tag tag-accent">Deep Learning</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Lightsheet</span>
+        <span class="tag">Open Source</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-open">
+          <span class="fr">● Actif</span><span class="en">● Active</span>
+        </span>
+        <div class="project-links">
+          <a href="https://doi.org/10.64898/2026.04.03.715281" target="_blank" rel="noopener" class="btn btn-outline">
+            <span class="fr">Pré-publication</span><span class="en">Pre-print</span>
+          </a>
+          <a href="https://github.com/clementhelsens" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drug Screen -->
+    <div class="project-card" id="drugscreen">
+      <div class="project-header">
+        <div class="project-emoji">💊</div>
+        <div class="project-meta">
+          <h2>Drug Screen Pipeline <span class="period-badge">EPFL · 2023–présent</span></h2>
+          <p class="project-subtitle fr">Plateforme de phénotypage automatisé du poisson zèbre par IA</p>
+          <p class="project-subtitle en">Automated zebrafish phenotyping platform powered by AI</p>
+        </div>
+      </div>
+      <p class="project-body fr">
+        Plateforme complète pour le criblage pharmacologique haut débit sur poisson zèbre (zebrafish),
+        développée à l'EPFL. Le système intègre trois modèles ResNet (orientation, contrôle qualité,
+        comptage de somites) avec la chaîne instrumentale SLIMS → VAST → Leica. Le délai de traitement
+        a été réduit de plusieurs jours/semaines à quelques minutes — ce pipeline est aujourd'hui l'un
+        des workflows phares du laboratoire.
+      </p>
+      <p class="project-body en">
+        Complete platform for high-throughput pharmacological screening on zebrafish, developed at EPFL.
+        The system integrates three ResNet models (orientation, quality control, somite counting) with
+        the SLIMS → VAST → Leica instrument chain. Processing time was reduced from days/weeks to
+        minutes — this pipeline is now one of the lab's flagship workflows.
+      </p>
+      <ul class="project-highlights fr">
+        <li>3 modèles ResNet en production : orientation, QC automatique, comptage de somites</li>
+        <li>Intégration SLIMS ↔ VAST ↔ Leica : traitement entièrement automatisé de bout en bout</li>
+        <li>Réduction du délai d'analyse de plusieurs semaines à quelques minutes</li>
+        <li>Dashboard interactif (Bokeh/Panel) pour les biologistes — exploration et export des résultats</li>
+      </ul>
+      <ul class="project-highlights en">
+        <li>3 ResNet models in production: orientation, automatic QC, somite counting</li>
+        <li>SLIMS ↔ VAST ↔ Leica integration: fully automated end-to-end processing</li>
+        <li>Analysis turnaround reduced from weeks to minutes</li>
+        <li>Interactive dashboard (Bokeh/Panel) for biologists — results exploration and export</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">ResNet</span>
+        <span class="tag tag-accent">PyTorch</span>
+        <span class="tag">SLIMS</span>
+        <span class="tag">Bokeh</span>
+        <span class="tag">Zebrafish</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-open">
+          <span class="fr">● Actif</span><span class="en">● Active</span>
+        </span>
+        <div class="project-links">
+          <a href="contact.html" class="btn btn-outline">
+            <span class="fr">Me contacter pour en savoir plus</span>
+            <span class="en">Contact me for more details</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viventis Laser Ablation -->
+    <div class="project-card" id="viventis">
+      <div class="project-header">
+        <div class="project-emoji">⚡</div>
+        <div class="project-meta">
+          <h2>Viventis Laser Ablation <span class="period-badge">EPFL · 2023–présent</span></h2>
+          <p class="project-subtitle fr">Dashboard de contrôle d'ablation laser sur microscope Viventis</p>
+          <p class="project-subtitle en">Laser ablation control dashboard for Viventis microscope</p>
+        </div>
+      </div>
+      <p class="project-body fr">
+        Développement d'un dashboard Bokeh complet pour le contrôle de l'ablation laser sur les
+        microscopes Viventis lightsheet du laboratoire. L'interface permet la sélection interactive
+        de régions d'intérêt, la paramétrisation fine du laser et le contrôle d'acquisition en
+        temps réel — remplaçant entièrement les workflows manuels précédents.
+      </p>
+      <p class="project-body en">
+        Development of a full Bokeh dashboard for laser ablation control on the lab's Viventis
+        lightsheet microscopes. The interface enables interactive region selection, fine-grained
+        laser parametrisation, and real-time acquisition control — fully replacing previous
+        manual workflows.
+      </p>
+      <ul class="project-highlights fr">
+        <li>Interface Bokeh interactive : sélection de ROI, paramétrage laser, contrôle temps réel</li>
+        <li>Remplacement complet des workflows manuels — gain de temps et reproductibilité améliorée</li>
+        <li>Intégration native avec le système d'acquisition Viventis lightsheet</li>
+        <li>Utilisé quotidiennement par les biologistes du laboratoire EPFL</li>
+      </ul>
+      <ul class="project-highlights en">
+        <li>Interactive Bokeh interface: ROI selection, laser parametrisation, real-time control</li>
+        <li>Full replacement of manual workflows — time savings and improved reproducibility</li>
+        <li>Native integration with the Viventis lightsheet acquisition system</li>
+        <li>Used daily by biologists in the EPFL lab</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">Bokeh</span>
+        <span class="tag">Viventis</span>
+        <span class="tag">Microscopy</span>
+        <span class="tag">Real-time</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-open">
+          <span class="fr">● Actif</span><span class="en">● Active</span>
+        </span>
+        <div class="project-links">
+          <a href="contact.html" class="btn btn-outline">
+            <span class="fr">Me contacter</span><span class="en">Contact me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sports Platform -->
+    <div class="project-card" id="sports">
+      <div class="project-header">
+        <div class="project-emoji">🏃</div>
+        <div class="project-meta">
+          <h2>Sports Performance Platform <span class="period-badge">2026–présent</span></h2>
+          <p class="project-subtitle fr">Application Django pour l'analyse de performance des athlètes d'ultra-distance</p>
+          <p class="project-subtitle en">Django app for ultra-distance athlete performance analytics</p>
+        </div>
+      </div>
+      <p class="project-body fr">
+        Plateforme full-stack développée en Django, intégrant monitoring de la variabilité de fréquence
+        cardiaque (HRV), glycémie en continu, journaux d'entraînement, suivi nutritionnel et un modèle
+        de gestion de l'allure course personnalisé. Projet pilote avec ~10 athlètes, ciblant les
+        épreuves d'ultra-distance.
+      </p>
+      <p class="project-body en">
+        Full-stack Django platform integrating heart rate variability (HRV) monitoring, continuous
+        glucose tracking, training logs, nutrition tracking and a custom race pacing model.
+        Pilot project with ~10 athletes targeting ultra-distance events.
+      </p>
+      <ul class="project-highlights fr">
+        <li>App Django full-stack : HRV, glycémie continue, nutrition, entraînement et modèle d'allure</li>
+        <li>Agrégation de données multi-sources (capteurs physiologiques, wearables)</li>
+        <li>Tableaux de bord de visualisation pour entraîneurs et athlètes</li>
+        <li>Modèle de prédiction de la performance et de gestion d'effort pour l'ultra-distance</li>
+      </ul>
+      <ul class="project-highlights en">
+        <li>Full-stack Django app: HRV, continuous glucose, nutrition, training and pacing model</li>
+        <li>Multi-source data aggregation (physiological sensors, wearables)</li>
+        <li>Visualisation dashboards for coaches and athletes</li>
+        <li>Performance prediction and effort management model for ultra-distance events</li>
+      </ul>
+      <div class="tags">
+        <span class="tag tag-accent">Python</span>
+        <span class="tag tag-accent">Django</span>
+        <span class="tag tag-accent">Bokeh</span>
+        <span class="tag">HRV</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Sport</span>
+      </div>
+      <div class="project-footer">
+        <span class="project-status status-collab">
+          <span class="fr">● En cours</span><span class="en">● In progress</span>
+        </span>
+        <div class="project-links">
+          <a href="contact.html" class="btn btn-outline">
+            <span class="fr">Me contacter</span><span class="en">Contact me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Key4HEP -->
     <div class="project-card" id="key4hep">
       <div class="project-header">
         <div class="project-emoji">⚛️</div>
         <div class="project-meta">
-          <h2>Key4HEP</h2>
-          <p class="project-subtitle fr">Ecosystème logiciel pour la physique des hautes énergies — CERN / FCC</p>
-          <p class="project-subtitle en">Software ecosystem for high-energy physics — CERN / FCC</p>
+          <h2>Key4HEP <span class="period-badge">CERN · 2013–2022</span></h2>
+          <p class="project-subtitle fr">Ecosystème logiciel pour la physique des hautes énergies — co-fondateur</p>
+          <p class="project-subtitle en">Software ecosystem for high-energy physics — co-founder</p>
         </div>
       </div>
       <p class="project-body fr">
         Key4HEP est un effort communautaire international visant à fournir un cadre logiciel
-        unifié pour les futurs détecteurs de physique des hautes énergies, notamment dans le
-        cadre du projet FCC (Future Circular Collider) au CERN. J'ai contribué au développement
-        du framework d'analyse <strong>FCCAnalyses</strong>, qui permet aux physiciens de réaliser
-        des analyses end-to-end — de la simulation de particules aux résultats publiables.
+        unifié pour les futurs détecteurs de physique des hautes énergies (projet FCC au CERN).
+        Co-fondé depuis zéro avec une équipe de 15 chercheurs, il est devenu le standard de facto
+        adopté par de multiples projets de détecteurs majeurs. J'ai coordonné les équipes de
+        computing FCC (6 ans) et d'analyse ATLAS (3 ans), totalisant 50+ physiciens sur plusieurs
+        continents.
       </p>
       <p class="project-body en">
-        Key4HEP is an international community effort to provide a unified software framework for
-        future high-energy physics detectors, notably in the context of the FCC (Future Circular
-        Collider) project at CERN. I contributed to the development of the <strong>FCCAnalyses</strong>
-        analysis framework, enabling physicists to perform end-to-end analyses — from particle
-        simulation to publishable results.
+        Key4HEP is an international community effort providing a unified software framework for
+        future high-energy physics detectors (FCC project at CERN). Co-founded from scratch with
+        a 15-researcher team, it became the de-facto standard adopted by multiple major detector
+        projects. I coordinated the FCC computing (6 yr) and ATLAS analysis (3 yr) teams,
+        totalling 50+ physicists across continents.
       </p>
       <ul class="project-highlights fr">
-        <li>Développement et maintenance de FCCAnalyses (Python + C++), utilisé par ~50 groupes de physique</li>
-        <li>Architecture de pipelines de traitement d'événements sur des jeux de données à l'échelle du pétaoctet</li>
-        <li>Intégration CI/CD, tests automatisés et documentation complète</li>
-        <li>Encadrement de doctorants et post-docs sur les workflows d'analyse</li>
+        <li>Co-fondateur : architecture complète du framework, de zéro à standard international</li>
+        <li>Coordination de 50+ physiciens sur plusieurs continents, 4 grandes publications techniques</li>
+        <li>Pipelines d'analyse à l'échelle du pétaoctet sur HTCondor / Slurm</li>
+        <li>CI/CD, tests automatisés, documentation complète — ouvert à la communauté HEP mondiale</li>
       </ul>
       <ul class="project-highlights en">
-        <li>Development and maintenance of FCCAnalyses (Python + C++), used by ~50 physics groups</li>
-        <li>Event processing pipeline architecture on petabyte-scale datasets</li>
-        <li>CI/CD integration, automated testing and full documentation</li>
-        <li>Supervision of PhD students and postdocs on analysis workflows</li>
+        <li>Co-founder: full framework architecture, from scratch to international standard</li>
+        <li>Coordination of 50+ physicists across continents, 4 major technical papers</li>
+        <li>Petabyte-scale analysis pipelines on HTCondor / Slurm</li>
+        <li>CI/CD, automated testing, full documentation — open to the global HEP community</li>
       </ul>
       <div class="tags">
         <span class="tag tag-accent">C++17</span>
@@ -126,173 +400,13 @@
         <span class="tag">Open Source</span>
       </div>
       <div class="project-footer">
-        <span class="project-status status-open">
-          <span class="fr">● Actif</span><span class="en">● Active</span>
+        <span class="project-status status-complete">
+          <span class="fr">Projet passé (CERN)</span><span class="en">Past project (CERN)</span>
         </span>
         <div class="project-links">
           <a href="https://github.com/HEP-FCC/FCCAnalyses" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           <a href="https://key4hep.github.io" target="_blank" rel="noopener" class="btn btn-outline">
             <span class="fr">Documentation</span><span class="en">Docs</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- LiLiTTool -->
-    <div class="project-card" id="lilitool">
-      <div class="project-header">
-        <div class="project-emoji">📈</div>
-        <div class="project-meta">
-          <h2>LiLiTTool</h2>
-          <p class="project-subtitle fr">Outil d'analyse statistique — likelihood & tests d'hypothèses</p>
-          <p class="project-subtitle en">Statistical analysis tool — likelihood & hypothesis testing</p>
-        </div>
-      </div>
-      <p class="project-body fr">
-        LiLiTTool est un outil Python spécialisé dans les analyses statistiques de type
-        profil de vraisemblance (profile likelihood) et les tests d'hypothèses fréquentistes,
-        typiques en physique des hautes énergies. Il propose une interface simplifiée pour
-        construire des modèles statistiques, calculer des intervalles de confiance et
-        visualiser les résultats.
-      </p>
-      <p class="project-body en">
-        LiLiTTool is a Python tool specialised in profile likelihood statistical analyses
-        and frequentist hypothesis tests, typical in high-energy physics. It provides a
-        simplified interface to build statistical models, compute confidence intervals and
-        visualise results.
-      </p>
-      <ul class="project-highlights fr">
-        <li>Interface Python haut niveau sur ROOT/RooStats pour les non-experts en statistique</li>
-        <li>Calcul de limites d'exclusion et d'intervalles de confiance (CL<sub>s</sub>, Feldman-Cousins)</li>
-        <li>Visualisation automatique des scans de vraisemblance et des intervalles</li>
-        <li>Utilisé dans plusieurs publications HEP (ATLAS, FCC)</li>
-      </ul>
-      <ul class="project-highlights en">
-        <li>High-level Python interface on ROOT/RooStats for non-statisticians</li>
-        <li>Computation of exclusion limits and confidence intervals (CL<sub>s</sub>, Feldman-Cousins)</li>
-        <li>Automatic visualisation of likelihood scans and intervals</li>
-        <li>Used in several HEP publications (ATLAS, FCC)</li>
-      </ul>
-      <div class="tags">
-        <span class="tag tag-accent">Python</span>
-        <span class="tag tag-accent">ROOT</span>
-        <span class="tag tag-accent">RooStats</span>
-        <span class="tag">Statistics</span>
-        <span class="tag">HEP</span>
-      </div>
-      <div class="project-footer">
-        <span class="project-status status-collab">● Open source</span>
-        <div class="project-links">
-          <a href="https://github.com/clementhelsens" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Drug Screen -->
-    <div class="project-card" id="drugscreen">
-      <div class="project-header">
-        <div class="project-emoji">💊</div>
-        <div class="project-meta">
-          <h2>Drug Screen</h2>
-          <p class="project-subtitle fr">Plateforme d'analyse pour le criblage pharmacologique haut débit</p>
-          <p class="project-subtitle en">Analysis platform for high-throughput pharmacological screening</p>
-        </div>
-      </div>
-      <p class="project-body fr">
-        En collaboration avec un laboratoire de bio-informatique, développement d'une
-        plateforme complète pour l'analyse de données de criblage pharmacologique (HTS —
-        High-Throughput Screening). Le système automatise l'ingestion, le contrôle qualité,
-        la normalisation et le scoring des données, et fournit un tableau de bord interactif
-        pour les biologistes et les chimistes.
-      </p>
-      <p class="project-body en">
-        In collaboration with a bioinformatics laboratory, development of a complete platform
-        for high-throughput screening (HTS) data analysis. The system automates ingestion,
-        quality control, normalisation and scoring, and provides an interactive dashboard
-        for biologists and chemists.
-      </p>
-      <ul class="project-highlights fr">
-        <li>Pipeline de traitement automatisé des données HTS (ingestion, QC, normalisation)</li>
-        <li>Modèles ML pour le classement de composés actifs et la réduction des faux positifs</li>
-        <li>Dashboard interactif (Python / Dash) pour l'exploration et l'export des résultats</li>
-        <li>Intégration avec des bases de données de composés chimiques (ChEMBL, PubChem)</li>
-      </ul>
-      <ul class="project-highlights en">
-        <li>Automated HTS data processing pipeline (ingestion, QC, normalisation)</li>
-        <li>ML models for active compound ranking and false positive reduction</li>
-        <li>Interactive dashboard (Python / Dash) for results exploration and export</li>
-        <li>Integration with chemical compound databases (ChEMBL, PubChem)</li>
-      </ul>
-      <div class="tags">
-        <span class="tag tag-accent">Python</span>
-        <span class="tag tag-accent">Pandas</span>
-        <span class="tag tag-accent">scikit-learn</span>
-        <span class="tag tag-accent">Dash/Plotly</span>
-        <span class="tag">Bioinformatics</span>
-        <span class="tag">HTS</span>
-      </div>
-      <div class="project-footer">
-        <span class="project-status status-complete">
-          <span class="fr">Projet livré</span><span class="en">Delivered</span>
-        </span>
-        <div class="project-links">
-          <a href="contact.html" class="btn btn-outline">
-            <span class="fr">Me contacter pour en savoir plus</span>
-            <span class="en">Contact me for more details</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sports Platform -->
-    <div class="project-card" id="sports">
-      <div class="project-header">
-        <div class="project-emoji">🏃</div>
-        <div class="project-meta">
-          <h2>Sports Platform</h2>
-          <p class="project-subtitle fr">Plateforme de données pour l'analyse de performance sportive</p>
-          <p class="project-subtitle en">Data platform for sports performance analytics</p>
-        </div>
-      </div>
-      <p class="project-body fr">
-        Conception et développement d'une plateforme de collecte et d'analyse de données de
-        performance pour athlètes de haut niveau. Le système agrège des données de capteurs
-        physiologiques (fréquence cardiaque, GPS, accéléromètres), les traite en quasi-temps
-        réel et produit des indicateurs actionnables pour les entraîneurs.
-      </p>
-      <p class="project-body en">
-        Design and development of a data collection and analysis platform for high-performance
-        athletes. The system aggregates data from physiological sensors (heart rate, GPS,
-        accelerometers), processes it in near-real-time and produces actionable metrics
-        for coaches.
-      </p>
-      <ul class="project-highlights fr">
-        <li>Architecture de collecte de données multi-sources (IoT, wearables, GPS)</li>
-        <li>Traitement en quasi-temps réel et détection d'anomalies physiologiques</li>
-        <li>Tableau de bord web pour visualisation et comparaison de sessions d'entraînement</li>
-        <li>Export de rapports PDF personnalisés pour les entraîneurs</li>
-      </ul>
-      <ul class="project-highlights en">
-        <li>Multi-source data collection architecture (IoT, wearables, GPS)</li>
-        <li>Near-real-time processing and physiological anomaly detection</li>
-        <li>Web dashboard for visualisation and comparison of training sessions</li>
-        <li>Custom PDF report export for coaches</li>
-      </ul>
-      <div class="tags">
-        <span class="tag tag-accent">Python</span>
-        <span class="tag tag-accent">FastAPI</span>
-        <span class="tag tag-accent">PostgreSQL</span>
-        <span class="tag">IoT</span>
-        <span class="tag">Analytics</span>
-        <span class="tag">Sport</span>
-      </div>
-      <div class="project-footer">
-        <span class="project-status status-collab">
-          <span class="fr">● En cours</span><span class="en">● In progress</span>
-        </span>
-        <div class="project-links">
-          <a href="contact.html" class="btn btn-outline">
-            <span class="fr">Me contacter</span><span class="en">Contact me</span>
           </a>
         </div>
       </div>
@@ -326,8 +440,8 @@
 <footer>
   <div class="footer-inner">
     <p>
-      <span class="fr">© 2026 Clément Helsens. Basé en Suisse.</span>
-      <span class="en">© 2026 Clément Helsens. Based in Switzerland.</span>
+      <span class="fr">© 2026 Clément Helsens. Région lémanique, France / Suisse.</span>
+      <span class="en">© 2026 Clément Helsens. Lake Geneva region, France / Switzerland.</span>
     </p>
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>

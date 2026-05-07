@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos — Clément Helsens</title>
-  <meta name="description" content="Parcours et expertise de Clément Helsens, physicien et ingénieur data basé en Suisse.">
+  <meta name="description" content="Parcours et expertise de Clément Helsens, physicien et ingénieur data basé dans la région lémanique.">
   <script>(function(){var l=localStorage.getItem('lang')||'fr';document.documentElement.className='lang-'+l;document.documentElement.lang=l;})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,10 @@
     .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); }
     .stat-item { text-align: center; }
     @media (max-width: 480px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+    .honor-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .honor-item:last-child { border-bottom: none; }
+    .honor-year { font-size: 0.8125rem; font-weight: 600; color: var(--accent); white-space: nowrap; min-width: 36px; }
+    .honor-text { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -53,13 +57,13 @@
     <h1>Clément Helsens</h1>
     <p class="lead lead-white fr">
       Physicien des particules reconverti en ingénieur data et consultant scientifique.
-      Basé en Suisse romande, je travaille à l'intersection de la recherche fondamentale,
-      du logiciel et de l'analyse de données.
+      Basé dans la région lémanique (France / Suisse), je travaille à l'intersection
+      de la recherche fondamentale, du logiciel et de l'analyse de données.
     </p>
     <p class="lead lead-white en">
       Particle physicist turned data engineer and scientific consultant.
-      Based in French-speaking Switzerland, I work at the intersection of fundamental
-      research, software and data analysis.
+      Based in the Lake Geneva region (France / Switzerland), I work at the intersection
+      of fundamental research, software and data analysis.
     </p>
   </div>
 </section>
@@ -78,16 +82,17 @@
               <span class="en">Physicist · Software engineer · Data consultant</span>
             </p>
             <p class="bio fr">
-              Formé en physique des particules, j'ai passé plus de 15 ans à concevoir des
-              outils d'analyse de données pour les plus grands détecteurs du monde (ATLAS au
-              LHC, FCC au CERN). Aujourd'hui, j'applique cette expertise aux problèmes de
-              données des laboratoires académiques et industriels suisses.
+              Docteur en physique des particules, j'ai passé plus de 15 ans à concevoir des
+              outils d'analyse de données pour les plus grands détecteurs du monde — de l'expérience
+              ATLAS au LHC jusqu'aux projets FCC du CERN. Depuis 2023, j'applique cette expertise
+              aux besoins des laboratoires de biologie et de sciences du sport à l'EPFL et en
+              Suisse romande.
             </p>
             <p class="bio en">
-              Trained in particle physics, I spent over 15 years designing data analysis
-              tools for the world's largest detectors (ATLAS at the LHC, FCC at CERN).
-              Today, I apply this expertise to the data challenges of Swiss academic
-              and industrial laboratories.
+              Holding a PhD in particle physics, I spent over 15 years designing data analysis
+              tools for the world's largest detectors — from ATLAS at the LHC to CERN's FCC
+              projects. Since 2023, I apply this expertise to the needs of biology and sports
+              science labs at EPFL and in French-speaking Switzerland.
             </p>
           </div>
         </div>
@@ -105,10 +110,10 @@
             <div class="highlight-label">publications</div>
           </div>
           <div class="stat-item">
-            <div class="highlight-number">4</div>
+            <div class="highlight-number">500 TB</div>
             <div class="highlight-label">
-              <span class="fr">projets actifs</span>
-              <span class="en">active projects</span>
+              <span class="fr">données gérées</span>
+              <span class="en">data managed</span>
             </div>
           </div>
         </div>
@@ -123,69 +128,84 @@
             <span class="en">Professional background</span>
           </h2>
           <div class="timeline mt-8">
+
+            <div class="timeline-item">
+              <div class="timeline-date">2026 – <span class="fr">présent</span><span class="en">present</span></div>
+              <div class="timeline-content">
+                <h3>
+                  <span class="fr">Contractant indépendant</span>
+                  <span class="en">Independent Contractor</span>
+                </h3>
+                <p class="org">
+                  <span class="fr">Sports Performance & Nutrition · Indépendant</span>
+                  <span class="en">Sports Performance & Nutrition · Self-employed</span>
+                </p>
+                <p class="fr">Développement d'une plateforme Django full-stack intégrant monitoring HRV,
+                glycémie en continu, suivi nutritionnel et modèle de gestion de l'allure — pilote
+                avec ~10 athlètes d'ultra-distance.</p>
+                <p class="en">Full-stack Django platform integrating HRV monitoring, continuous glucose
+                tracking, nutrition logs and a custom race pacing model — pilot with ~10
+                ultra-distance athletes.</p>
+              </div>
+            </div>
+
             <div class="timeline-item">
               <div class="timeline-date">2023 – <span class="fr">présent</span><span class="en">present</span></div>
               <div class="timeline-content">
                 <h3>
-                  <span class="fr">Consultant indépendant</span>
-                  <span class="en">Independent consultant</span>
+                  <span class="fr">Scientific Data Manager & R&D Physicist</span>
+                  <span class="en">Scientific Data Manager & R&D Physicist</span>
                 </h3>
-                <p class="org">Helsens Consulting · <span class="fr">Suisse</span><span class="en">Switzerland</span></p>
-                <p class="fr">Conseil et développement logiciel pour laboratoires académiques et acteurs
-                industriels : pipelines de données, modèles ML, formation.</p>
-                <p class="en">Consulting and software development for academic labs and industry:
-                data pipelines, ML models, training.</p>
+                <p class="org">EPFL · Lausanne, Suisse</p>
+                <p class="fr">Gestion des données scientifiques et R&D pour un laboratoire de biologie.
+                Déploiement d'outils de tracking temps réel (DL, &lt;1 s de latence), pipelines
+                de phénotypage par IA (3 modèles ResNet), base de données image (300 k+ entrées,
+                500 TB+) et dashboards Bokeh/Panel utilisés quotidiennement par 10+ chercheurs.</p>
+                <p class="en">Scientific data management and R&D for a biology lab at EPFL.
+                Real-time tracking tools (DL, &lt;1 s latency), AI phenotyping pipelines
+                (3 ResNet models), image database (300 k+ entries, 500 TB+), and Bokeh/Panel
+                dashboards used daily by 10+ researchers.</p>
               </div>
             </div>
+
             <div class="timeline-item">
-              <div class="timeline-date">2018 – 2023</div>
+              <div class="timeline-date">2013 – 2022</div>
               <div class="timeline-content">
                 <h3>
-                  <span class="fr">Chercheur senior — FCC Software</span>
-                  <span class="en">Senior researcher — FCC Software</span>
+                  <span class="fr">Research Physicist & Software Coordinator</span>
+                  <span class="en">Research Physicist & Software Coordinator</span>
                 </h3>
-                <p class="org">CERN · Genève</p>
-                <p class="fr">Responsable du framework d'analyse FCCAnalyses pour le projet Future Circular
-                Collider. Développement de logiciels de simulation et d'analyse, coordination
-                de groupes de travail internationaux.</p>
-                <p class="en">Responsible for the FCCAnalyses analysis framework for the Future Circular
-                Collider project. Software development for simulation and analysis, coordination
-                of international working groups.</p>
+                <p class="org">CERN · Genève — FCC Study &amp; Expérience ATLAS</p>
+                <p class="fr">Co-fondateur de Key4HEP, le cadre logiciel open-source devenu le standard
+                de facto pour les futurs détecteurs HEP. Coordination d'équipes de 50+ physiciens
+                sur plusieurs continents. Lead physicist sur des mesures de précision publiées dans
+                JHEP et EPJC. ~30 conférences internationales invitées (ICHEP, EPS, SUSY).</p>
+                <p class="en">Co-founder of Key4HEP, the open-source software framework that became
+                the de-facto standard for future HEP detectors. Coordination of 50+ physicists
+                across continents. Lead physicist on precision measurements published in JHEP
+                and EPJC. ~30 invited international talks (ICHEP, EPS, SUSY).</p>
               </div>
             </div>
+
             <div class="timeline-item">
-              <div class="timeline-date">2013 – 2018</div>
+              <div class="timeline-date">2009 – 2013</div>
               <div class="timeline-content">
                 <h3>
-                  <span class="fr">Chercheur — Collaboration ATLAS</span>
-                  <span class="en">Researcher — ATLAS Collaboration</span>
+                  <span class="fr">Research Associate</span>
+                  <span class="en">Research Associate</span>
                 </h3>
-                <p class="org">CERN / EPFL · Genève — Lausanne</p>
-                <p class="fr">Analyses de physique au Grand Collisionneur de Hadrons (LHC) : recherches
-                de nouvelle physique, mesures de précision du boson de Higgs. Développement
-                d'outils d'analyse et de reconstruction de jets.</p>
-                <p class="en">Physics analyses at the Large Hadron Collider (LHC): searches for new
-                physics, precision measurements of the Higgs boson. Development of analysis
-                and jet reconstruction tools.</p>
+                <p class="org">IFAE · Barcelone, Espagne</p>
+                <p class="fr">Analyses de physique au LHC (ATLAS) : recherches de quarks vectoriels et
+                états finals à quatre quarks top. Développement d'outils statistiques open-source
+                adoptés par 20+ équipes internationales (C++ fréquentiste, pyFBU — premier outil
+                Python de déconvolution Bayésienne multi-canal en physique des particules).</p>
+                <p class="en">Physics analyses at the LHC (ATLAS): searches for vector-like quarks and
+                four-top-quark final states. Development of open-source statistical tools adopted
+                by 20+ international teams (C++ frequentist library, pyFBU — first Python
+                multi-channel Bayesian unfolding tool in particle physics).</p>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2010 – 2013</div>
-              <div class="timeline-content">
-                <h3>
-                  <span class="fr">Doctorat en physique des particules</span>
-                  <span class="en">PhD in particle physics</span>
-                </h3>
-                <p class="org">
-                  <span class="fr">Université Paris-Saclay · France</span>
-                  <span class="en">University of Paris-Saclay · France</span>
-                </p>
-                <p class="fr">Thèse sur [TITRE DE THÈSE À COMPLÉTER]. Analyse de données de
-                collisions proton-proton à l'expérience ATLAS du LHC.</p>
-                <p class="en">Thesis on [THESIS TITLE TO COMPLETE]. Analysis of proton-proton
-                collision data at the ATLAS experiment at the LHC.</p>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -199,37 +219,72 @@
             <span class="en">Academic background</span>
           </h2>
           <div class="timeline mt-8">
+
             <div class="timeline-item">
-              <div class="timeline-date">2010 – 2013</div>
+              <div class="timeline-date">2006 – 2009</div>
               <div class="timeline-content">
                 <h3>
                   <span class="fr">Doctorat (PhD) en physique des particules</span>
-                  <span class="en">PhD in particle physics</span>
+                  <span class="en">PhD in Particle Physics</span>
                 </h3>
                 <p class="org">
-                  <span class="fr">Université Paris-Saclay</span>
-                  <span class="en">University of Paris-Saclay</span>
+                  <span class="fr">Université Paris XI &amp; CEA Saclay · France</span>
+                  <span class="en">University of Paris XI &amp; CEA Saclay · France</span>
+                </p>
+                <p class="fr">Thèse : <em>« Recherche de résonance de haute masse dans le canal
+                di-muon de l'expérience ATLAS au CERN »</em></p>
+                <p class="en">Thesis: <em>"Search for high-mass resonances in the di-muon channel
+                of the ATLAS experiment at CERN"</em></p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2003 – 2006</div>
+              <div class="timeline-content">
+                <h3>
+                  <span class="fr">Master en physique fondamentale</span>
+                  <span class="en">M.Sc. in Fundamental Physics</span>
+                </h3>
+                <p class="org">
+                  <span class="fr">Université Paris XI · France</span>
+                  <span class="en">University of Paris XI · France</span>
                 </p>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2008 – 2010</div>
-              <div class="timeline-content">
-                <h3>
-                  <span class="fr">Master en physique théorique & expérimentale</span>
-                  <span class="en">Master's in theoretical & experimental physics</span>
-                </h3>
-                <p class="org">[<span class="fr">Université à compléter</span><span class="en">University to complete</span>]</p>
+
+          </div>
+        </div>
+
+        <!-- Distinctions -->
+        <div style="margin-top: 56px;">
+          <p class="label">
+            <span class="fr">Distinctions</span><span class="en">Honours</span>
+          </p>
+          <h2>
+            <span class="fr">Prix & reconnaissances</span>
+            <span class="en">Awards & recognition</span>
+          </h2>
+          <div style="margin-top: 20px;">
+            <div class="honor-item">
+              <div class="honor-year">2025</div>
+              <div class="honor-text">
+                <span class="fr"><strong>Breakthrough Prize — Physique fondamentale.</strong>
+                Co-lauréat pour les contributions aux expériences de physique des hautes énergies
+                au LHC (CERN).</span>
+                <span class="en"><strong>Breakthrough Prize — Fundamental Physics.</strong>
+                Co-recipient for contributions to high-energy physics experiments at the
+                LHC (CERN).</span>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2005 – 2008</div>
-              <div class="timeline-content">
-                <h3>
-                  <span class="fr">Licence en physique</span>
-                  <span class="en">Bachelor's in physics</span>
-                </h3>
-                <p class="org">[<span class="fr">Université à compléter</span><span class="en">University to complete</span>]</p>
+            <div class="honor-item">
+              <div class="honor-year">2013</div>
+              <div class="honor-text">
+                <span class="fr"><strong>Découverte du boson de Higgs (co-auteur, collaboration ATLAS).</strong>
+                Publication dans Physics Letters B — l'une des découvertes les plus marquantes
+                de la physique du XXI<sup>e</sup> siècle.</span>
+                <span class="en"><strong>Higgs boson discovery (co-author, ATLAS collaboration).</strong>
+                Published in Physics Letters B — one of the most significant discoveries
+                in 21st-century physics.</span>
               </div>
             </div>
           </div>
@@ -247,19 +302,19 @@
           <div class="skills-grid">
             <div class="skill-col">
               <h4><span class="fr">Langages</span><span class="en">Languages</span></h4>
-              <ul><li>Python</li><li>C++ (11/14/17)</li><li>Bash / Shell</li><li>SQL</li></ul>
+              <ul><li>Python</li><li>C++ (11/14/17)</li><li>R · SQL</li><li>Bash / Shell</li></ul>
             </div>
             <div class="skill-col">
-              <h4>ML & Data</h4>
-              <ul><li>scikit-learn</li><li>PyTorch</li><li>Pandas / NumPy</li><li>ROOT / RooStats</li></ul>
+              <h4>ML & Vision</h4>
+              <ul><li>CoTracker3 · ResNet</li><li>PyTorch · scikit-learn</li><li>Computer Vision</li><li>Bayesian stats</li></ul>
+            </div>
+            <div class="skill-col">
+              <h4>Web & Viz</h4>
+              <ul><li>Django · Bokeh · Panel</li><li>Plotly / Dash</li><li>Jupyter</li><li>ROOT / RooStats</li></ul>
             </div>
             <div class="skill-col">
               <h4>Infrastructure</h4>
-              <ul><li>Docker</li><li>Git / GitHub Actions</li><li>HTCondor / Slurm</li><li>Linux</li></ul>
-            </div>
-            <div class="skill-col">
-              <h4><span class="fr">Visualisation</span><span class="en">Visualisation</span></h4>
-              <ul><li>Matplotlib / Seaborn</li><li>Plotly / Dash</li><li>ROOT</li><li>Jupyter</li></ul>
+              <ul><li>Docker · CI/CD</li><li>MariaDB · Spark</li><li>HTCondor · Slurm</li><li>Linux · Git</li></ul>
             </div>
           </div>
         </div>
@@ -292,6 +347,14 @@
                 <p class="en">Primary working language for 15 years in international environments.</p>
               </div>
             </div>
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <span class="fr">Allemand</span><span class="en">German</span>
+              </div>
+              <div class="timeline-content">
+                <h3><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -304,7 +367,7 @@
             <li>📧 <a href="mailto:clement.helsens@epfl.ch" style="color:var(--accent);text-decoration:none;">clement.helsens@epfl.ch</a></li>
             <li>🐙 <a href="https://github.com/clementhelsens" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">github.com/clementhelsens</a></li>
             <li>💼 <a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">LinkedIn</a></li>
-            <li>📍 <span class="fr">Suisse romande</span><span class="en">French-speaking Switzerland</span></li>
+            <li>📍 <span class="fr">Région lémanique (France / Suisse)</span><span class="en">Lake Geneva region (France / Switzerland)</span></li>
           </ul>
         </div>
         <div class="sidebar-card" style="margin-top:16px;">
@@ -319,10 +382,10 @@
         <div class="sidebar-card" style="margin-top:16px;">
           <h4><span class="fr">Secteurs</span><span class="en">Sectors</span></h4>
           <ul>
+            <li><span class="fr">Bio-informatique & sciences de la vie</span><span class="en">Bioinformatics & life sciences</span></li>
             <li><span class="fr">Physique fondamentale</span><span class="en">Fundamental physics</span></li>
-            <li><span class="fr">Bio-informatique</span><span class="en">Bioinformatics</span></li>
             <li><span class="fr">Sciences du sport</span><span class="en">Sports science</span></li>
-            <li><span class="fr">Recherche appliquée</span><span class="en">Applied research</span></li>
+            <li><span class="fr">Recherche académique (HES, EPFL…)</span><span class="en">Academic research (HES, EPFL…)</span></li>
             <li><span class="fr">Industrie pharmaceutique</span><span class="en">Pharmaceutical industry</span></li>
           </ul>
         </div>
@@ -333,7 +396,7 @@
           </a>
         </div>
         <div style="margin-top: 10px;">
-          <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;display:flex;">
+          <a href="cv_helsens_datascience.pdf" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;display:flex;">
             <span class="fr">Télécharger le CV (PDF)</span>
             <span class="en">Download CV (PDF)</span>
           </a>
@@ -347,8 +410,8 @@
 <footer>
   <div class="footer-inner">
     <p>
-      <span class="fr">© 2026 Clément Helsens. Basé en Suisse.</span>
-      <span class="en">© 2026 Clément Helsens. Based in Switzerland.</span>
+      <span class="fr">© 2026 Clément Helsens. Région lémanique, France / Suisse.</span>
+      <span class="en">© 2026 Clément Helsens. Lake Geneva region, France / Switzerland.</span>
     </p>
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
