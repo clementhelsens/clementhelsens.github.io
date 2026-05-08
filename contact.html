@@ -11,14 +11,118 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* FAQ */
     .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
     .faq-item:first-child { padding-top: 0; }
     .faq-item:last-child { border-bottom: none; }
     .faq-item h4 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 6px; }
     .faq-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
-    .tally-box iframe { border: none; border-radius: var(--radius-sm); width: 100%; }
-    .research-intro { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px; font-size: 0.875rem; color: #1e40af; line-height: 1.6; }
-    .research-intro strong { font-weight: 600; }
+
+    /* Contact form card */
+    .form-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .form-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 6px; }
+    .form-card > p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* Form fields */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+    .form-group select { cursor: pointer; }
+
+    /* Submit button */
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.1s;
+      width: 100%;
+      justify-content: center;
+    }
+    .btn-submit:hover { background: var(--accent-dark); }
+    .btn-submit:active { transform: scale(0.98); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* Status messages */
+    .form-status {
+      display: none;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+    .form-status.success {
+      display: block;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+    }
+    .form-status.error {
+      display: block;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+    }
+
+    /* Privacy note */
+    .form-privacy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -64,6 +168,7 @@
   <div class="container">
     <div class="contact-layout">
 
+      <!-- LEFT: direct contact + FAQ -->
       <div class="contact-info">
         <h3>
           <span class="fr">Me joindre directement</span>
@@ -74,9 +179,9 @@
         <p class="en">You can reach me by email or via LinkedIn. I typically respond
         within 24–48h on weekdays.</p>
 
-        <a href="mailto:clement.helsens@epfl.ch" class="contact-row">
+        <a href="mailto:clement.helsens@gmail.com" class="contact-row">
           <div class="contact-row-icon">📧</div>
-          clement.helsens@epfl.ch
+          clement.helsens@gmail.com
         </a>
         <a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener" class="contact-row">
           <div class="contact-row-icon">💼</div>
@@ -88,8 +193,8 @@
         </a>
         <div class="contact-row" style="cursor:default;">
           <div class="contact-row-icon">📍</div>
-          <span class="fr">Région lémanique, France / Suisse (EPFL · Lausanne)</span>
-          <span class="en">Lake Geneva region, France / Switzerland (EPFL · Lausanne)</span>
+          <span class="fr">Région lémanique, France / Suisse</span>
+          <span class="en">Lake Geneva region, France / Switzerland</span>
         </div>
 
         <div style="margin-top: 40px;">
@@ -100,12 +205,13 @@
               <span class="fr">Quels types de missions ?</span>
               <span class="en">What types of projects?</span>
             </h4>
-            <p class="fr">Conseil en architecture de données, développement de pipelines d'analyse,
-            modèles ML, formation d'équipe, audit de code, expertise ponctuelle. Missions
-            courtes (quelques jours) comme longues (plusieurs mois).</p>
-            <p class="en">Data architecture consulting, analysis pipeline development, ML models,
-            team training, code audits, one-off expertise. Short missions (a few days) to
-            long-term engagements (several months).</p>
+            <p class="fr">Conseil en architecture de données, pipelines d'analyse, modèles ML,
+            analyse d'images (microscopie, imagerie médicale), validation statistique d'études,
+            formation d'équipe, audit de code. Missions courtes (quelques jours) comme longues
+            (plusieurs mois).</p>
+            <p class="en">Data architecture consulting, analysis pipelines, ML models, image analysis
+            (microscopy, medical imaging), statistical study validation, team training, code audits.
+            Short missions (a few days) to long-term engagements (several months).</p>
           </div>
 
           <div class="faq-item">
@@ -125,10 +231,9 @@
               <span class="en">What budget to expect?</span>
             </h4>
             <p class="fr">Variable selon la complexité et la durée. Première consultation gratuite.
-            Je peux également m'adapter aux contraintes budgétaires des labos académiques
-            (fonds FNS, ERC, etc.).</p>
+            Je peux m'adapter aux contraintes budgétaires des labos académiques (FNS, ERC, etc.).</p>
             <p class="en">Varies with complexity and duration. First consultation free.
-            I can also adapt to the budget constraints of academic labs (SNF, ERC funds, etc.).</p>
+            I can adapt to the budget constraints of academic labs (SNF, ERC funds, etc.).</p>
           </div>
 
           <div class="faq-item">
@@ -144,66 +249,108 @@
         </div>
       </div>
 
+      <!-- RIGHT: contact form -->
       <div>
-        <div class="tally-box">
+        <div class="form-card">
           <h3>
-            <span class="fr">Formulaire d'étude de marché</span>
-            <span class="en">Market research form</span>
+            <span class="fr">Envoyer un message</span>
+            <span class="en">Send a message</span>
           </h3>
-          <p class="fr">Pour les laboratoires EPFL · UNIL · UNIGE et HES-SO — aidez-moi à mieux
-          comprendre vos besoins en quelques questions.</p>
-          <p class="en">For EPFL · UNIL · UNIGE and HES-SO labs — help me better understand
-          your needs in a few questions.</p>
-
-          <div class="research-intro">
-            <span class="fr"><strong>Pourquoi ce formulaire ?</strong> Je réalise actuellement une étude
-            de marché pour comprendre les besoins réels des laboratoires romands en matière
-            d'analyse de données et de conseil technique. Vos réponses m'aident à proposer
-            des services parfaitement adaptés à vos contextes.</span>
-            <span class="en"><strong>Why this form?</strong> I'm currently conducting market research
-            to understand the real data needs of Swiss research labs. Your answers help me
-            offer services perfectly tailored to your contexts.</span>
-          </div>
+          <p class="fr">Décrivez votre projet ou votre question — je vous répondrai sous 48h.</p>
+          <p class="en">Describe your project or question — I'll get back to you within 48h.</p>
 
           <!--
-          ═══════════════════════════════════════════════════════════════
-          INTÉGRER TALLY :
-          1. Créez un formulaire sur https://tally.so
-          2. Share → Embed → copiez l'ID (ex: wMXkbP)
-          3. Remplacez YOUR_FORM_ID et décommentez le bloc iframe
-          ═══════════════════════════════════════════════════════════════
+            Web3Forms — service gratuit pour formulaires sur sites statiques.
+            Pour activer :
+            1. Allez sur https://web3forms.com
+            2. Entrez clement.helsens@gmail.com pour recevoir un access key
+            3. Remplacez YOUR_ACCESS_KEY ci-dessous par la clé reçue par email
           -->
-          <!--div class="tally-placeholder">
-            <strong class="fr">Formulaire Tally.so à intégrer ici</strong>
-            <strong class="en">Tally.so form to integrate here</strong><br><br>
-            <span class="fr">Créez votre formulaire sur</span>
-            <span class="en">Create your form on</span>
-            <a href="https://tally.so" target="_blank">tally.so</a>,
-            <span class="fr">puis remplacez ce bloc.</span>
-            <span class="en">then replace this block.</span>
-            <br><br>
-            <code>&lt;iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0"&gt;&lt;/iframe&gt;</code>
-            <br><br>
-            <small style="color: var(--text-muted);">
-              + <code>&lt;script async src="https://tally.so/widgets/embed.js"&gt;&lt;/script&gt;</code>
-            </small>
-          </div-->
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+            <input type="hidden" name="subject" id="form-subject-hidden" value="Contact via helsens.ch">
+            <input type="hidden" name="redirect" value="false">
+            <input type="checkbox" name="botcheck" style="display:none">
 
-          
-          <iframe data-tally-src="https://tally.so/r/Me8oRA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy" width="100%" height="520" frameborder="0"
-            marginheight="0" marginwidth="0" title="Market research"></iframe>
-          <script async src="https://tally.so/widgets/embed.js"></script>
-          
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">
+                  <span class="fr">Nom *</span>
+                  <span class="en">Name *</span>
+                </label>
+                <input type="text" id="name" name="name" required autocomplete="name"
+                  placeholder="Marie Dupont">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                  placeholder="marie@labo.ch">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="org">
+                <span class="fr">Organisation</span>
+                <span class="en">Organisation</span>
+              </label>
+              <input type="text" id="org" name="organisation"
+                placeholder="EPFL / UNIGE / UNIL / …">
+            </div>
+
+            <div class="form-group">
+              <label for="topic">
+                <span class="fr">Sujet *</span>
+                <span class="en">Topic *</span>
+              </label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>
+                  — <span class="fr">Choisir</span><span class="en">Choose</span> —
+                </option>
+                <option class="fr" value="Analyse de données / pipeline">Analyse de données / pipeline</option>
+                <option class="en" value="Data analysis / pipeline">Data analysis / pipeline</option>
+                <option class="fr" value="Machine learning / vision">Machine learning / vision</option>
+                <option class="en" value="Machine learning / vision">Machine learning / vision</option>
+                <option class="fr" value="Imagerie médicale / biologique">Imagerie médicale / biologique</option>
+                <option class="en" value="Medical / biological imaging">Medical / biological imaging</option>
+                <option class="fr" value="Validation statistique d'étude">Validation statistique d'étude</option>
+                <option class="en" value="Statistical study validation">Statistical study validation</option>
+                <option class="fr" value="Formation / audit de code">Formation / audit de code</option>
+                <option class="en" value="Training / code audit">Training / code audit</option>
+                <option class="fr" value="Autre">Autre</option>
+                <option class="en" value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">
+                <span class="fr">Message *</span>
+                <span class="en">Message *</span>
+              </label>
+              <textarea id="message" name="message" required
+                placeholder="Décrivez brièvement votre contexte et vos besoins…"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span class="fr">Envoyer le message</span>
+              <span class="en">Send message</span>
+            </button>
+
+            <div id="form-success" class="form-status success">
+              <span class="fr">✓ Message envoyé ! Je vous répondrai sous 48h.</span>
+              <span class="en">✓ Message sent! I'll get back to you within 48h.</span>
+            </div>
+            <div id="form-error" class="form-status error">
+              <span class="fr">Une erreur est survenue. Écrivez-moi directement à clement.helsens@gmail.com</span>
+              <span class="en">An error occurred. Please write directly to clement.helsens@gmail.com</span>
+            </div>
+          </form>
+
+          <p class="form-privacy">
+            <span class="fr">Vos données ne sont utilisées qu'pour vous répondre.</span>
+            <span class="en">Your data is used only to respond to your message.</span>
+          </p>
         </div>
-
-        <p style="margin-top:16px;font-size:0.8125rem;color:var(--text-muted);text-align:center;">
-          <span class="fr">Vous préférez écrire directement ?</span>
-          <span class="en">Prefer to write directly?</span>
-          <a href="mailto:clement.helsens@epfl.ch?subject=Project%20inquiry">
-            clement.helsens@epfl.ch
-          </a>
-        </p>
       </div>
 
     </div>
@@ -219,7 +366,7 @@
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="mailto:clement.helsens@epfl.ch">Email</a></li>
+      <li><a href="mailto:clement.helsens@gmail.com">Email</a></li>
     </ul>
   </div>
 </footer>
@@ -231,7 +378,68 @@ function toggleLang() {
   html.className = 'lang-' + next;
   html.lang = next;
   localStorage.setItem('lang', next);
+  updateSelectOptions(next);
 }
+
+// Show the right select options based on language
+function updateSelectOptions(lang) {
+  var sel = document.getElementById('topic');
+  if (!sel) return;
+  var opts = sel.querySelectorAll('option');
+  opts.forEach(function(o) {
+    if (o.value === '') return; // placeholder
+    var show = lang === 'en' ? o.classList.contains('en') : o.classList.contains('fr');
+    o.style.display = show ? '' : 'none';
+  });
+  if (sel.value) {
+    // if selected option is now hidden, reset
+    var selected = sel.querySelector('option[value="' + sel.value + '"]');
+    if (selected && selected.style.display === 'none') sel.value = '';
+  }
+}
+
+// Update subject hidden field with selected topic
+document.getElementById('topic').addEventListener('change', function() {
+  document.getElementById('form-subject-hidden').value = 'Contact helsens.ch — ' + this.value;
+});
+
+// Handle form submission via fetch (prevents page reload)
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submit-btn');
+  var successEl = document.getElementById('form-success');
+  var errorEl = document.getElementById('form-error');
+
+  btn.disabled = true;
+  successEl.style.display = 'none';
+  errorEl.style.display = 'none';
+
+  var data = new FormData(this);
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.success) {
+      successEl.style.display = 'block';
+      document.getElementById('contact-form').reset();
+    } else {
+      errorEl.style.display = 'block';
+    }
+    btn.disabled = false;
+  })
+  .catch(function() {
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+  });
+});
+
+// Init on page load
+(function() {
+  var lang = localStorage.getItem('lang') || 'fr';
+  updateSelectOptions(lang);
+})();
 </script>
 </body>
 </html>

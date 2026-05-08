@@ -474,7 +474,7 @@
 <div class="cv-topbar">
   <p class="cv-topbar-note fr">Version web du curriculum vitae — mise à jour mai 2026</p>
   <p class="cv-topbar-note en">Web version of the curriculum vitae — updated May 2026</p>
-  <a href="cv_helsens_datascience.pdf" download class="btn-download">
+  <a id="cv-pdf-link" href="cv_helsens_fr.pdf" download class="btn-download">
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     <span class="fr">Télécharger le PDF</span>
     <span class="en">Download PDF</span>
@@ -502,7 +502,7 @@
     <div class="cv-s-head">Contact</div>
     <div class="cv-contact-item">
       <span class="cv-contact-dot"></span>
-      <a href="mailto:clement.helsens@epfl.ch">clement.helsens@epfl.ch</a>
+      <a href="mailto:clement.helsens@gmail.com">clement.helsens@gmail.com</a>
     </div>
     <div class="cv-contact-item">
       <span class="cv-contact-dot"></span>
@@ -965,7 +965,7 @@
     <ul class="footer-links">
       <li><a href="https://github.com/clementhelsens" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="https://linkedin.com/in/clementhelsens" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="mailto:clement.helsens@epfl.ch">Email</a></li>
+      <li><a href="mailto:clement.helsens@gmail.com">Email</a></li>
     </ul>
   </div>
 </footer>
@@ -977,7 +977,19 @@ function toggleLang() {
   html.className = 'lang-' + next;
   html.lang = next;
   localStorage.setItem('lang', next);
+  updateCvPdfLink(next);
 }
+
+function updateCvPdfLink(lang) {
+  var link = document.getElementById('cv-pdf-link');
+  if (link) link.href = lang === 'en' ? 'cv_helsens_en.pdf' : 'cv_helsens_fr.pdf';
+}
+
+// Synchronise avec la langue actuelle au chargement
+(function() {
+  var lang = localStorage.getItem('lang') || 'fr';
+  updateCvPdfLink(lang);
+})();
 </script>
 </body>
 </html>
